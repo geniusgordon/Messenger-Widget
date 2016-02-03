@@ -1,0 +1,11 @@
+{
+  "name": "Messenger",
+  "version": "1.0.0",
+  "main": "app.html",
+  "window": {
+      "title": "Messenger",
+      "toolbar": true,
+      "height": 600,
+     "width": 800
+  }
+}
