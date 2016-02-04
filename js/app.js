@@ -7,9 +7,18 @@ windowBehaviour.setNewWinPolicy(win);
 var tray;
 
 function initTray() {
+    var menu = new gui.Menu();
+    var quit = new gui.MenuItem({
+        label: 'Quit'
+    });
+    quit.on('click', function() {
+        win.close(true);
+    });
+    menu.append(quit);
     tray = new gui.Tray({
         title: 'Messenger',
-        icon: 'images/icon_tray.png'
+        icon: 'images/icon_tray.png',
+        menu: menu
     });
     tray.on('click', function() {
         win.show();
