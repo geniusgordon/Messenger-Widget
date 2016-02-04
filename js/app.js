@@ -7,8 +7,8 @@ windowBehaviour.setNewWinPolicy(win);
 function moveWinToBottomRight() {
     var w = window.screen.width;
     var h = window.screen.height;
-    win.moveTo(w-320, 0);
-    win.resizeTo(320, h);
+    win.moveTo(w-320, 100);
+    win.resizeTo(320, h-100);
 }
 
 function checkLogin() {
