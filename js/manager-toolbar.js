@@ -1,15 +1,13 @@
-var isMinimized = false;
 $('.close').click(function() {
     win.close();
 });
 $('.minimize').click(function() {
-    if (isMinimized) {
+    if (win.height != 30) {
         win.height = 30;
         win.y = window.screen.height - 30;
     } else {
-        win.height = window.screen.height - 100;
-        win.y = 100;
+        win.height = window.screen.height;
+        win.y = 0;
     }
-    isMinimized = !isMinimized;
 });
 
