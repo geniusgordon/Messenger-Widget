@@ -6,7 +6,8 @@
     "title": "Messenger",
     "frame": false,
     "toolbar": false,
-    "height": 600,
+    "transparent": true,
+    "height": 900,
     "width": 320
   }
 }

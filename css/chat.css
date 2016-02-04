@@ -2,7 +2,7 @@
     position: absolute;
     right: 0;
     height: calc(100% - 30px);
-    width: 920px;
+    width: 100%;
     overflow: hidden;
 }
 

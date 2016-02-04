@@ -1,6 +1,9 @@
 .toolbar {
     height: 30px;
-    background: #0084FF;
+    background: #777;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* background: #0084FF; */
     padding: 0 10px;
     display: flex;
     justify-content: flex-end;

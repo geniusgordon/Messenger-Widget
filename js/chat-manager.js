@@ -6,9 +6,8 @@ function openNewChat(url) {
         'height': 500,
         'frame': false,
         'toolbar': false,
-        'resizable': false,
-        'focus': true,
-        'position': 'mouse'
+        'transparent': true,
+        'focus': true
     });
     newChat.on('loaded', function() {
         if (openedChat[url].loaded)
