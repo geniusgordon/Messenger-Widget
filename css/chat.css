@@ -1,7 +1,7 @@
 .chat {
     position: absolute;
     right: 0;
-    height: 100%;
+    height: calc(100% - 30px);
     width: 920px;
     overflow: hidden;
 }
