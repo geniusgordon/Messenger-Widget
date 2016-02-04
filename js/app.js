@@ -22,5 +22,6 @@ function checkLogin() {
 moveWinToBottomRight();
 $('iframe').load(function() {
     checkLogin();
+    fixStyles(document.styleSheets[1]);
 });
 

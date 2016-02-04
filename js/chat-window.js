@@ -8,3 +8,7 @@ win.on('url', function(url) {
     $('iframe').attr('src', url);
 });
 
+$('iframe').load(function() {
+    fixStyles(document.styleSheets[1]);
+});
+

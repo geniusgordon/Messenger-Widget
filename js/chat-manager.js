@@ -2,11 +2,12 @@ var openedChat = {}
 
 function openNewChat(url) {
     var newChat = gui.Window.open('chat.html', {
-        'width': 400,
+        'width': 600,
         'height': 500,
         'toolbar': true,
         'resizable': false,
-        'focus': true
+        'focus': true,
+        'position': 'mouse'
     });
     newChat.on('loaded', function() {
         if (openedChat[url].loaded)
