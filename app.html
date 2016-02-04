@@ -1,15 +1,33 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <title>Messenger</title>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/fix-manager.css">
-  </head>
-  <body>
-    <iframe class="messenger" src="https://www.messenger.com/login" scrolling="no" nwdisable nwfaketop></iframe>
+    <link rel="stylesheet" type="text/css" href="css/manager.css">
+    <link rel="stylesheet" type="text/css" href="css/toolbar.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+
+<body>
+    <div class="toolbar">
+        <span class="minimize btn">
+            <i class="material-icons">remove</i>
+        </span>
+        <span class="close btn">
+            <i class="material-icons">close</i>
+        </span>
+    </div>
+    <iframe class="manager" src="https://www.messenger.com/login" scrolling="no" nwdisable
+    nwfaketop></iframe>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/chat-manager.js"></script>
     <script src="js/fix-style.js"></script>
-  </body>
+    <script src="js/toolbar.js"></script>
+</body>
+
 </html>
+

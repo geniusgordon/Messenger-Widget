@@ -1,0 +1,14 @@
+.chat {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 920px;
+    overflow: hidden;
+}
+
+.chat iframe {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+

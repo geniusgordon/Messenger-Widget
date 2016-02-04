@@ -4,7 +4,8 @@
   "main": "app.html",
   "window": {
     "title": "Messenger",
-    "toolbar": true,
+    "frame": false,
+    "toolbar": false,
     "height": 600,
     "width": 320
   }

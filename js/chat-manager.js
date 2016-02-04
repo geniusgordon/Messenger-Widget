@@ -4,7 +4,8 @@ function openNewChat(url) {
     var newChat = gui.Window.open('chat.html', {
         'width': 600,
         'height': 500,
-        'toolbar': true,
+        'frame': false,
+        'toolbar': false,
         'resizable': false,
         'focus': true,
         'position': 'mouse'

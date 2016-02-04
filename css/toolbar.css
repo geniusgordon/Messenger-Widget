@@ -1,0 +1,25 @@
+.toolbar {
+    height: 30px;
+    background: #0084FF;
+    padding: 0 10px;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+}
+
+.toolbar .btn {
+    padding: 0 5px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.toolbar .btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.toolbar .btn i {
+    color: white;
+    line-height: 30px;
+}
+
