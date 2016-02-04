@@ -4,6 +4,7 @@
   "main": "app.html",
   "window": {
     "title": "Messenger",
+    "icon": "images/icon.png",
     "frame": false,
     "toolbar": false,
     "transparent": true,

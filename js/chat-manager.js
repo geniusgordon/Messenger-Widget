@@ -2,6 +2,8 @@ var openedChat = {}
 
 function openNewChat(url) {
     var newChat = gui.Window.open('chat.html', {
+        'title': 'Messenger',
+        'icon': 'images/icon.png',
         'width': 600,
         'height': 500,
         'frame': false,
