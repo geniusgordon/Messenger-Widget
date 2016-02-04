@@ -4,6 +4,18 @@ var windowBehaviour = require('./js/window-behaviour');
 
 windowBehaviour.setNewWinPolicy(win);
 
+var tray;
+
+function initTray() {
+    tray = new gui.Tray({
+        title: 'Messenger',
+        icon: 'images/icon_tray.png'
+    });
+    tray.on('click', function() {
+        win.show();
+    });
+}
+
 function moveWinToBottomRight() {
     var w = window.screen.width;
     var h = window.screen.height;
@@ -21,6 +33,11 @@ function checkLogin() {
         win.setPosition('center');
     }
 }
+
+initTray();
+win.on('close', function() {
+    this.hide();
+});
 
 moveWinToBottomRight();
 $('iframe').load(function() {
