@@ -4,7 +4,7 @@
     border: none;
 }
 
-html, body, iframe {
+html, body {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -16,5 +16,25 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+}
+
+.messenger {
+    height: 100%;
+    width: 800px;
+    overflow: hidden;
+}
+
+.chat {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 720px;
+    overflow: hidden;
+}
+
+.chat iframe {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
