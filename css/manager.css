@@ -1,7 +1,11 @@
 .manager {
-    height: 100%;
+    height: calc(100% - 30px);
     width: 800px;
     overflow: hidden;
+}
+
+.manager.small {
+    width: 300px;
 }
 
 .border {
@@ -10,5 +14,14 @@
     height: calc(100% - 32px);
     width: 318px;
     pointer-events: none;
+}
+
+.background {
+    position: fixed;
+    top: 30px;
+    z-index: -1;
+    background: white;
+    height: 100%;
+    width: 100%;
 }
 
