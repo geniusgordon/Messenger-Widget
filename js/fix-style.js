@@ -6,7 +6,6 @@ function fixStyles(styleSheet) {
     for (rules in fixRules) {
         if (fixRules.hasOwnProperty(rules)) {
             styleTag.append(fixRules[rules].cssText);
-            console.log(fixRules[rules].cssText);
         }
     }
 }
