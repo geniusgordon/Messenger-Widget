@@ -1,6 +1,4 @@
 .chat {
-    position: absolute;
-    right: 0;
     height: calc(100% - 30px);
     width: 100%;
     overflow: hidden;
@@ -10,5 +8,13 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
+}
+
+.border {
+    border: 1px solid #777;
+    position: fixed;
+    height: calc(100% - 32px);
+    width: calc(100% - 2px);
+    pointer-events: none;
 }
 

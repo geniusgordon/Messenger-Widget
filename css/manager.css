@@ -4,3 +4,11 @@
     overflow: hidden;
 }
 
+.border {
+    border: 1px solid #777;
+    position: fixed;
+    height: calc(100% - 32px);
+    width: 318px;
+    pointer-events: none;
+}
+

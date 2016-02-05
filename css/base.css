@@ -10,15 +10,12 @@ html, body {
     overflow: hidden;
 }
 
-body {
+iframe {
+    background-color: white;
     background-image: url('../images/loading.gif');
     background-size: 24px 19px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-}
-
-iframe {
-    background-color: white;
 }
 
