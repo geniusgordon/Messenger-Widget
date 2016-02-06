@@ -1,4 +1,9 @@
 # My Facebook Messenger Desktop Widget
 
-just for fun
+## Build
+
+```
+npm install
+gulp build
+```
 
