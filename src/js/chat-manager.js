@@ -31,6 +31,7 @@ $('iframe').load(function() {
     $('iframe').contents().find('a._1ht5._5l-3').click(function() {
         var url = $(this).attr('href');
         if (openedChat[url]) {
+            openedChat[url].win.show();
             openedChat[url].win.focus();
         } else {
             openedChat[url] = openNewChat(url);

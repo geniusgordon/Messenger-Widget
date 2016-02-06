@@ -2,7 +2,7 @@ $('.devtool').click(function() {
     win.showDevTools();
 });
 $('.close').click(function() {
-    win.close();
+    win.hide();
 });
 $('.minimize').click(function() {
     win.minimize();
