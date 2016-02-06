@@ -10,5 +10,9 @@ win.on('url', function(url) {
 
 $('iframe').load(function() {
     fixStyles(document.styleSheets[1]);
+    $('iframe').contents().keyup(function(e) {
+        if (e.keyCode == 27)
+            win.close();
+    });
 });
 
