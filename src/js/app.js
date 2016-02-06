@@ -22,6 +22,7 @@ function initTray() {
     });
     tray.on('click', function() {
         win.show();
+        win.focus();
     });
 }
 
