@@ -9,3 +9,8 @@ gulp.task('build', function() {
         }));
 });
 
+gulp.task('install', function() {
+    return gulp.src(['./build/**/*'])
+        .pipe(gulp.dest('/opt/'));
+});
+
