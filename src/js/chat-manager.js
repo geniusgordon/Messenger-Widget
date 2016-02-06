@@ -18,8 +18,7 @@ function openNewChat(url) {
         openedChat[url].loaded = true;
     });
     newChat.on('close', function() {
-        openedChat[url] = null;
-        newChat.close(true);
+        newChat.hide();
     });
     return {
         win: newChat,
