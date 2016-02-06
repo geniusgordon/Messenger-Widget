@@ -26,6 +26,13 @@ function openNewChat(url) {
     }
 }
 
+win.on('close', function() {
+    for (chat in openedChat) {
+        if (chat.close)
+            chat.close(true);
+    }
+});
+
 $('iframe').load(function() {
     $('iframe').contents().on('click', 'a._1ht5._5l-3', function() {
         var url = $(this).attr('href');
