@@ -1,0 +1,19 @@
+{
+  "name": "Messenger",
+  "version": "1.0.0",
+  "main": "app.html",
+  "scripts": {
+    "start": "nw . --enable-transparent-visuals --disable-gpu"
+  },
+  "window": {
+    "title": "Messenger",
+    "icon": "images/icon.png",
+    "frame": false,
+    "toolbar": false,
+    "transparent": true,
+    "visible-on-all-workspaces": true,
+    "height": 800,
+    "width": 320
+  }
+}
+
