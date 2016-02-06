@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.html",
   "scripts": {
-      "start": "nw . --enable-transparent-visuals --disable-gpu"
+    "start": "nw . --enable-transparent-visuals --disable-gpu"
   },
   "window": {
     "title": "Messenger",
@@ -14,6 +14,8 @@
     "visible-on-all-workspaces": true,
     "height": 800,
     "width": 320
+  },
+  "dependencies": {
+    "nw-builder": "^2.2.0"
   }
 }
-
