@@ -28,7 +28,7 @@ function openNewChat(url) {
 }
 
 $('iframe').load(function() {
-    $('iframe').contents().find('a._1ht5._5l-3').click(function() {
+    $('iframe').contents().on('click', 'a._1ht5._5l-3', function() {
         var url = $(this).attr('href');
         if (openedChat[url]) {
             openedChat[url].win.show();
