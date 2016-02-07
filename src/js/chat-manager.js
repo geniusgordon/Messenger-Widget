@@ -27,10 +27,12 @@ function openNewChat(url) {
 }
 
 win.on('close', function() {
-    for (chat in openedChat) {
-        if (chat.close)
-            chat.close(true);
+    for (url in openedChat) {
+        if (openedChat[url]) {
+            openedChat[url].win.close(true);
+        }
     }
+    win.close(true);
 });
 
 $('iframe').load(function() {
