@@ -37,5 +37,9 @@ $('iframe').load(function() {
         var url = $(this).attr('href');
         chatManager.openChat(url);
     });
+    $('iframe').contents().on('click', '#js_6 a._5f0v', function() {
+        var url = $('iframe')[0].contentWindow.location.href;
+        chatManager.openChat(url);
+    });
 });
 
