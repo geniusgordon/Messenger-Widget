@@ -1,3 +1,4 @@
+var gui = window.require('nw.gui');
 var openedChat = {}
 
 function openNewChat(url) {
@@ -17,33 +18,27 @@ function openNewChat(url) {
         newChat.emit('url', url);
         openedChat[url].loaded = true;
     });
-    newChat.on('close', function() {
-        newChat.hide();
-    });
     return {
         win: newChat,
         loaded: false
     }
 }
 
-win.on('close', function() {
-    for (url in openedChat) {
-        if (openedChat[url]) {
-            openedChat[url].win.close(true);
-        }
-    }
-    win.close(true);
-});
-
-$('iframe').load(function() {
-    $('iframe').contents().on('click', 'a._1ht5._5l-3', function() {
-        var url = $(this).attr('href');
+module.exports = {
+    openChat: function(url) {
         if (openedChat[url]) {
             openedChat[url].win.show();
             openedChat[url].win.focus();
         } else {
             openedChat[url] = openNewChat(url);
         }
-    });
-});
+    },
+    closeAllChat: function() {
+        for (url in openedChat) {
+            if (openedChat[url]) {
+                openedChat[url].win.close(true);
+            }
+        }
+    }
+};
 

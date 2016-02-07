@@ -1,9 +1,9 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
-var tray = require('./js/tray');
+var chatManager = require('./js/chat-manager');
+var notification = require('./js/notification');
 var windowBehaviour = require('./js/window-behaviour');
 
-tray.initTray(win);
 windowBehaviour.setNewWinPolicy(win);
 
 function moveWinToBottomRight() {
@@ -24,9 +24,18 @@ function checkLogin() {
     }
 }
 
+win.on('close', function() {
+    win.hide();
+});
+
 moveWinToBottomRight();
 $('iframe').load(function() {
     checkLogin();
     fixStyles(document.styleSheets[1]);
+    notification.inject($('iframe')[0].contentWindow, win);
+    $('iframe').contents().on('click', 'a._1ht5._5l-3', function() {
+        var url = $(this).attr('href');
+        chatManager.openChat(url);
+    });
 });
 
