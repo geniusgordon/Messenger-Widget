@@ -12,8 +12,8 @@
     "toolbar": false,
     "transparent": true,
     "visible-on-all-workspaces": true,
-    "height": 800,
-    "width": 320
+    "height": 600,
+    "width": 800
   }
 }
 
