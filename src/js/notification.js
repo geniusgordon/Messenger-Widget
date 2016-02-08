@@ -25,6 +25,9 @@ module.exports = {
         targetWindow.Notification.prototype = NativeNotification.prototype;
         targetWindow.Notification.permission = NativeNotification.permission;
         targetWindow.Notification.requestPermission = NativeNotification.requestPermission.bind(targetWindow.Notification);
+    },
+    disable: function(targetWindow) {
+        targetWindow.Notification = function() {};
     }
 };
 
