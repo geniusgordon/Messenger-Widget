@@ -1,6 +1,10 @@
 var gui = window.require('nw.gui');
 var openedChat = {}
 
+function random(low, high) {
+    return Math.floor(Math.random() * (high - low) + low);
+}
+
 function openNewChat(url) {
     var newChat = gui.Window.open('chat.html', {
         'title': 'Messenger',
@@ -17,6 +21,7 @@ function openNewChat(url) {
             return;
         newChat.emit('url', url);
         openedChat[url].loaded = true;
+        newChat.moveBy(random(-50, 50), random(-50, 50));
     });
     return {
         win: newChat,
