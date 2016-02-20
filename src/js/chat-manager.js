@@ -14,7 +14,8 @@ function openNewChat(url) {
         'frame': false,
         'toolbar': false,
         'transparent': true,
-        'focus': true
+        'focus': true,
+        "visible-on-all-workspaces": true
     });
     newChat.on('loaded', function() {
         if (openedChat[url].loaded)

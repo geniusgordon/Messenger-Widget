@@ -1,10 +1,14 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
+var tray = require('./js/tray');
+var toolbar = require('./js/toolbar');
 var chatManager = require('./js/chat-manager');
 var notification = require('./js/notification');
 var windowBehaviour = require('./js/window-behaviour');
 
 windowBehaviour.setNewWinPolicy(win);
+tray.init(win);
+toolbar.init($, win);
 
 function moveWinToBottomRight() {
     var w = window.screen.width;
@@ -27,6 +31,11 @@ function checkLogin() {
 win.on('close', function() {
     win.hide();
 });
+
+win.quit = function() {
+    chatManager.closeAllChat();
+    win.close(true);
+}
 
 moveWinToBottomRight();
 $('iframe').load(function() {

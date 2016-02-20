@@ -1,9 +1,11 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
+var toolbar = require('./js/toolbar');
 var notification = require('./js/notification');
 var windowBehaviour = require('./js/window-behaviour');
 
 windowBehaviour.setNewWinPolicy(win);
+toolbar.init($, win);
 
 win.on('url', function(url) {
     $('iframe').attr('src', url);
