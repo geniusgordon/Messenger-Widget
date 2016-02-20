@@ -26,7 +26,6 @@ module.exports = {
             label: label
         });
         item.on('click', function() {
-            menu.remove(item);
             tray.menu = menu;
             onClick && onClick();
         }.bind(this));
