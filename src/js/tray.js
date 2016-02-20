@@ -1,31 +1,38 @@
 var gui = window.require('nw.gui');
 
+var tray;
+var menu;
+var trayMenuItems = {};
+
 module.exports = {
     init: function(win) {
-        this.tray = new gui.Tray({
+        tray = new gui.Tray({
             title: 'Messenger',
             icon: 'images/icon_tray.png',
         });
-        this.menu = new gui.Menu();
+        menu = new gui.Menu();
         this.addMenuItem('Quit', function() {
             win.quit();
         });
-        this.tray.on('click', function() {
+        tray.on('click', function() {
             win.show();
             win.focus();
         });
     },
     addMenuItem(label, onClick) {
+        if (trayMenuItems[label])
+            return;
         var item = new gui.MenuItem({
             label: label
         });
         item.on('click', function() {
-            this.menu.remove(item);
-            this.tray.menu = this.menu;
+            menu.remove(item);
+            tray.menu = menu;
             onClick && onClick();
         }.bind(this));
-        this.menu.insert(item, 0);
-        this.tray.menu = this.menu;
+        menu.insert(item, 0);
+        tray.menu = menu;
+        trayMenuItems[label] = item;
     }
 };
 
