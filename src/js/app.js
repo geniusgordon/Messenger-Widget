@@ -28,6 +28,13 @@ function checkLogin() {
     }
 }
 
+function openChat(name, url) {
+    chatManager.openChat(name, url);
+    tray.addMenuItem(name, function() {
+        chatManager.openChat(name, url);
+    });
+}
+
 win.on('close', function() {
     win.hide();
 });
@@ -45,12 +52,12 @@ $('iframe').load(function() {
     $('iframe').contents().on('click', 'a._1ht5._5l-3', function() {
         var name = $(this).find('._1ht6').text();
         var url = $(this).attr('href');
-        chatManager.openChat(name, url);
+        openChat(name, url);
     });
     $('iframe').contents().on('click', '#js_6 a._5f0v', function() {
         var name = $(this).find('._364g').text();
         var url = $('iframe')[0].contentWindow.location.href;
-        chatManager.openChat(name, url);
+        openChat(name, url);
     });
 });
 
