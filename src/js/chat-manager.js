@@ -36,6 +36,8 @@ function openNewChat(name, url, onClose) {
 
 module.exports = {
     openChat: function(name, url, onClose) {
+        if (!url) return;
+        if (url.trim() == '') return;
         if (openedChat[name]) {
             openedChat[name].win.show();
             openedChat[name].win.focus();
