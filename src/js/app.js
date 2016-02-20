@@ -29,9 +29,10 @@ function checkLogin() {
 }
 
 function openChat(name, url) {
-    chatManager.openChat(name, url);
-    tray.addMenuItem(name, function() {
-        chatManager.openChat(name, url);
+    chatManager.openChat(name, url, function() {
+        tray.addMenuItem(name, function() {
+            chatManager.openChat(name, url);
+        });
     });
 }
 

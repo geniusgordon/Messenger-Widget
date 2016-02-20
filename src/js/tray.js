@@ -19,7 +19,11 @@ module.exports = {
         var item = new gui.MenuItem({
             label: label
         });
-        item.on('click', onClick);
+        item.on('click', function() {
+            this.menu.remove(item);
+            this.tray.menu = this.menu;
+            onClick && onClick();
+        }.bind(this));
         this.menu.insert(item, 0);
         this.tray.menu = this.menu;
     }

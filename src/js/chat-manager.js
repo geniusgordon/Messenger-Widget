@@ -5,7 +5,7 @@ function random(low, high) {
     return Math.floor(Math.random() * (high - low) + low);
 }
 
-function openNewChat(name, url) {
+function openNewChat(name, url, onClose) {
     var newChat = gui.Window.open('chat.html', {
         'title': 'Messenger',
         'icon': 'images/icon.png',
@@ -18,11 +18,14 @@ function openNewChat(name, url) {
         "visible-on-all-workspaces": true
     });
     newChat.on('loaded', function() {
-        if (openedChat[url].loaded)
+        if (openedChat[name].loaded)
             return;
         newChat.emit('url', url);
-        openedChat[url].loaded = true;
+        openedChat[name].loaded = true;
         newChat.moveBy(random(-50, 50), random(-50, 50));
+    });
+    newChat.on('close', function(name, url) {
+        onClose && onClose(name, url);
     });
     return {
         name: name,
@@ -32,18 +35,18 @@ function openNewChat(name, url) {
 }
 
 module.exports = {
-    openChat: function(name, url) {
-        if (openedChat[url]) {
-            openedChat[url].win.show();
-            openedChat[url].win.focus();
+    openChat: function(name, url, onClose) {
+        if (openedChat[name]) {
+            openedChat[name].win.show();
+            openedChat[name].win.focus();
         } else {
-            openedChat[url] = openNewChat(name, url);
+            openedChat[name] = openNewChat(name, url, onClose);
         }
     },
     closeAllChat: function() {
-        for (url in openedChat) {
-            if (openedChat[url]) {
-                openedChat[url].win.close(true);
+        for (name in openedChat) {
+            if (openedChat[name]) {
+                openedChat[name].win.close(true);
             }
         }
     }
