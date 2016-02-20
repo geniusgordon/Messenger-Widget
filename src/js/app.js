@@ -43,12 +43,14 @@ $('iframe').load(function() {
     fixStyles(document.styleSheets[1]);
     notification.inject($('iframe')[0].contentWindow, win);
     $('iframe').contents().on('click', 'a._1ht5._5l-3', function() {
+        var name = $(this).find('._1ht6').text();
         var url = $(this).attr('href');
-        chatManager.openChat(url);
+        chatManager.openChat(name, url);
     });
     $('iframe').contents().on('click', '#js_6 a._5f0v', function() {
+        var name = $(this).find('._364g').text();
         var url = $('iframe')[0].contentWindow.location.href;
-        chatManager.openChat(url);
+        chatManager.openChat(name, url);
     });
 });
 

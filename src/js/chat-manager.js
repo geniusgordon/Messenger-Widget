@@ -5,7 +5,7 @@ function random(low, high) {
     return Math.floor(Math.random() * (high - low) + low);
 }
 
-function openNewChat(url) {
+function openNewChat(name, url) {
     var newChat = gui.Window.open('chat.html', {
         'title': 'Messenger',
         'icon': 'images/icon.png',
@@ -25,18 +25,19 @@ function openNewChat(url) {
         newChat.moveBy(random(-50, 50), random(-50, 50));
     });
     return {
+        name: name,
         win: newChat,
         loaded: false
     }
 }
 
 module.exports = {
-    openChat: function(url) {
+    openChat: function(name, url) {
         if (openedChat[url]) {
             openedChat[url].win.show();
             openedChat[url].win.focus();
         } else {
-            openedChat[url] = openNewChat(url);
+            openedChat[url] = openNewChat(name, url);
         }
     },
     closeAllChat: function() {
