@@ -23,16 +23,16 @@ module.exports = {
         });
     },
     setupDevTools: function(targetWindow, win) {
-        targetWindow.onkeyup = function(e) {
+        targetWindow.addEventListener('keyup', function(e) {
             if (e.keyCode == 123)
                 win.showDevTools();
-        };
+        });
     },
     closeOnEsc: function(targetWindow, win) {
-        targetWindow.onkeyup = function(e) {
+        targetWindow.addEventListener('keyup', function(e) {
             if (e.which == 27)
                 win.close();
-        }
+        });
     }
 };
 
