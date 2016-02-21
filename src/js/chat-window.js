@@ -16,7 +16,7 @@ win.on('close', function() {
 $('iframe').load(function() {
     fixStyles(document.styleSheets[1]);
     notification.disable($('iframe')[0].contentWindow);
-    windowBehaviour.setupDevTools($('iframe'[0].contentWindow, win);
-    windowBehaviour.closeOnEsc($('iframe'[0].contentWindow, win);
+    windowBehaviour.setupDevTools($('iframe')[0].contentWindow, win);
+    windowBehaviour.closeOnEsc($('iframe')[0].contentWindow, win);
 });
 
