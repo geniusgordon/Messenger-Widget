@@ -1,11 +1,9 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
-var toolbar = require('./js/toolbar');
 var notification = require('./js/notification');
 var windowBehaviour = require('./js/window-behaviour');
 
 windowBehaviour.setNewWinPolicy(win);
-toolbar.init($, win);
 
 win.on('url', function(url) {
     $('iframe').attr('src', url);
@@ -18,9 +16,7 @@ win.on('close', function() {
 $('iframe').load(function() {
     fixStyles(document.styleSheets[1]);
     notification.disable($('iframe')[0].contentWindow);
-    $('iframe').contents().keyup(function(e) {
-        if (e.keyCode == 27)
-            win.close();
-    });
+    windowBehaviour.setupDevTools($('iframe'[0].contentWindow, win);
+    windowBehaviour.closeOnEsc($('iframe'[0].contentWindow, win);
 });
 

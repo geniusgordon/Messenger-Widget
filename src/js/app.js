@@ -1,14 +1,12 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
 var tray = require('./js/tray');
-var toolbar = require('./js/toolbar');
 var chatManager = require('./js/chat-manager');
 var notification = require('./js/notification');
 var windowBehaviour = require('./js/window-behaviour');
 
 windowBehaviour.setNewWinPolicy(win);
 tray.init(win);
-toolbar.init($, win);
 
 function moveWinToBottomRight() {
     var w = window.screen.width;
@@ -60,5 +58,7 @@ $('iframe').load(function() {
         var url = $('iframe')[0].contentWindow.location.href;
         openChat(name, url);
     });
+    windowBehaviour.setupDevTools($('iframe')[0].contentWindow, win);
+    windowBehaviour.closeOnEsc($('iframe')[0].contentWindow, win);
 });
 
