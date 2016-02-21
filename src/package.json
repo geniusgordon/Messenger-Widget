@@ -8,7 +8,7 @@
   "window": {
     "title": "Messenger",
     "icon": "images/icon.png",
-    "frame": false,
+    "frame": true,
     "toolbar": false,
     "transparent": true,
     "visible-on-all-workspaces": true,

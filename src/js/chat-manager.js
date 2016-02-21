@@ -11,7 +11,7 @@ function openNewChat(name, url, onClose) {
         'icon': 'images/icon.png',
         'width': 600,
         'height': 500,
-        'frame': false,
+        'frame': true,
         'toolbar': false,
         'transparent': true,
         'focus': true,
